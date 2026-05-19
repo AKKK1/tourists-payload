@@ -69,6 +69,13 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
+    'map-moments': MapMoment;
+    'tour-packages': TourPackage;
+    destinations: Destination;
+    'blog-posts': BlogPost;
+    'faq-items': FaqItem;
+    testimonials: Testimonial;
+    'booking-requests': BookingRequest;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -78,6 +85,13 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    'map-moments': MapMomentsSelect<false> | MapMomentsSelect<true>;
+    'tour-packages': TourPackagesSelect<false> | TourPackagesSelect<true>;
+    destinations: DestinationsSelect<false> | DestinationsSelect<true>;
+    'blog-posts': BlogPostsSelect<false> | BlogPostsSelect<true>;
+    'faq-items': FaqItemsSelect<false> | FaqItemsSelect<true>;
+    testimonials: TestimonialsSelect<false> | TestimonialsSelect<true>;
+    'booking-requests': BookingRequestsSelect<false> | BookingRequestsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -86,10 +100,14 @@ export interface Config {
   db: {
     defaultIDType: string;
   };
-  fallbackLocale: null;
-  globals: {};
-  globalsSelect: {};
-  locale: null;
+  fallbackLocale: ('false' | 'none' | 'null') | false | null | ('de' | 'en' | 'ka') | ('de' | 'en' | 'ka')[];
+  globals: {
+    'site-settings': SiteSetting;
+  };
+  globalsSelect: {
+    'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
+  };
+  locale: 'de' | 'en' | 'ka';
   widgets: {
     collections: CollectionsWidget;
   };
@@ -149,17 +167,296 @@ export interface User {
 export interface Media {
   id: string;
   alt: string;
+  cloudinaryPublicId?: string | null;
+  cloudinaryUrl?: string | null;
+  cloudinaryResourceType?: string | null;
+  cloudinaryFormat?: string | null;
+  cloudinaryVersion?: number | null;
+  /**
+   * Direct URL to the original file without transformations
+   */
+  originalUrl?: string | null;
+  /**
+   * URL with applied transformations
+   */
+  transformedUrl?: string | null;
+  /**
+   * Folder path in Cloudinary (e.g., products/2024)
+   */
+  cloudinaryFolder?: string | null;
+  /**
+   * Select transformations to apply. Note: Only one preset from each category (Size, Effect, etc.) will be applied.
+   */
+  transformationPreset?:
+    | (
+        | 'thumbnail'
+        | 'card'
+        | 'banner'
+        | 'hero'
+        | 'feature'
+        | 'avatar'
+        | 'profile-header'
+        | 'og-image'
+        | 'twitter-card'
+        | 'instagram-square'
+        | 'instagram-story'
+        | 'square'
+        | 'landscape-16-9'
+        | 'landscape-4-3'
+        | 'portrait-9-16'
+        | 'blur'
+        | 'grayscale'
+        | 'sepia'
+        | 'pixelate'
+        | 'sharpen'
+        | 'vignette'
+        | 'auto-optimize'
+        | 'high-quality'
+        | 'balanced'
+        | 'eco-mode'
+        | 'progressive'
+      )[]
+    | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
   thumbnailURL?: string | null;
   filename?: string | null;
   mimeType?: string | null;
+  /**
+   * File size in bytes
+   */
   filesize?: number | null;
   width?: number | null;
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "map-moments".
+ */
+export interface MapMoment {
+  id: string;
+  title: string;
+  description?: string | null;
+  /**
+   * Example: Bobnevi, Racha, Svaneti, hidden waterfall near Oni.
+   */
+  locationName: string;
+  /**
+   * Stored as [longitude, latitude]. Filled automatically from location search.
+   *
+   * @minItems 2
+   * @maxItems 2
+   */
+  coordinates: [number, number];
+  media: string | Media;
+  mediaType: 'photo' | 'video';
+  submittedByName?: string | null;
+  submittedByEmail?: string | null;
+  status: 'pending' | 'approved' | 'rejected';
+  featured?: boolean | null;
+  adminNotes?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tour-packages".
+ */
+export interface TourPackage {
+  id: string;
+  title: string;
+  slug: string;
+  tagline?: string | null;
+  description?: string | null;
+  coverImage?: (string | null) | Media;
+  gallery?: (string | Media)[] | null;
+  durationDays?: number | null;
+  priceFromEUR?: number | null;
+  pricePerPerson?: boolean | null;
+  minGroupSize?: number | null;
+  maxGroupSize?: number | null;
+  difficultyLevel?: ('easy' | 'moderate' | 'challenging' | 'strenuous') | null;
+  packageType?: ('fixed' | 'custom' | 'group') | null;
+  included?:
+    | {
+        item: string;
+        id?: string | null;
+      }[]
+    | null;
+  notIncluded?:
+    | {
+        item: string;
+        id?: string | null;
+      }[]
+    | null;
+  itinerary?:
+    | {
+        day: number;
+        title: string;
+        description?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  isFeatured?: boolean | null;
+  isActive?: boolean | null;
+  sortOrder?: number | null;
+  seo?: {
+    title?: string | null;
+    description?: string | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "destinations".
+ */
+export interface Destination {
+  id: string;
+  name: string;
+  slug: string;
+  region?: string | null;
+  shortDescription?: string | null;
+  description?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  coverImage?: (string | null) | Media;
+  gallery?: (string | Media)[] | null;
+  bestSeason?: string | null;
+  latitude?: number | null;
+  longitude?: number | null;
+  isFeatured?: boolean | null;
+  isActive?: boolean | null;
+  sortOrder?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blog-posts".
+ */
+export interface BlogPost {
+  id: string;
+  title: string;
+  /**
+   * Auto-generated from title. Use Latin letters, numbers, and hyphens for clean URLs.
+   */
+  slug: string;
+  excerpt?: string | null;
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  coverImage?: (string | null) | Media;
+  authorName?: string | null;
+  tags?:
+    | {
+        tag: string;
+        id?: string | null;
+      }[]
+    | null;
+  publishedAt?: string | null;
+  social?: {
+    shareTitle?: string | null;
+    shareDescription?: string | null;
+    youtubeUrl?: string | null;
+    shareImages?: (string | Media)[] | null;
+  };
+  seo?: {
+    title?: string | null;
+    description?: string | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faq-items".
+ */
+export interface FaqItem {
+  id: string;
+  question: string;
+  answer: string;
+  category?: string | null;
+  isActive?: boolean | null;
+  sortOrder?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "testimonials".
+ */
+export interface Testimonial {
+  id: string;
+  authorName: string;
+  authorCountry?: string | null;
+  authorAvatar?: (string | null) | Media;
+  rating?: number | null;
+  content: string;
+  package?: (string | null) | TourPackage;
+  tourDate?: string | null;
+  isFeatured?: boolean | null;
+  isActive?: boolean | null;
+  sortOrder?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "booking-requests".
+ */
+export interface BookingRequest {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone?: string | null;
+  country?: string | null;
+  preferredDatesFrom?: string | null;
+  preferredDatesTo?: string | null;
+  numAdults?: number | null;
+  numChildren?: number | null;
+  package?: (string | null) | TourPackage;
+  packageName?: string | null;
+  message?: string | null;
+  language?: ('de' | 'en' | 'ka') | null;
+  source?: string | null;
+  utmSource?: string | null;
+  utmMedium?: string | null;
+  utmCampaign?: string | null;
+  status: 'new' | 'contacted' | 'qualified' | 'quoted' | 'booked' | 'cancelled' | 'lost';
+  adminNotes?: string | null;
+  followUpAt?: string | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -192,6 +489,34 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'media';
         value: string | Media;
+      } | null)
+    | ({
+        relationTo: 'map-moments';
+        value: string | MapMoment;
+      } | null)
+    | ({
+        relationTo: 'tour-packages';
+        value: string | TourPackage;
+      } | null)
+    | ({
+        relationTo: 'destinations';
+        value: string | Destination;
+      } | null)
+    | ({
+        relationTo: 'blog-posts';
+        value: string | BlogPost;
+      } | null)
+    | ({
+        relationTo: 'faq-items';
+        value: string | FaqItem;
+      } | null)
+    | ({
+        relationTo: 'testimonials';
+        value: string | Testimonial;
+      } | null)
+    | ({
+        relationTo: 'booking-requests';
+        value: string | BookingRequest;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -263,6 +588,15 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
+  cloudinaryPublicId?: T;
+  cloudinaryUrl?: T;
+  cloudinaryResourceType?: T;
+  cloudinaryFormat?: T;
+  cloudinaryVersion?: T;
+  originalUrl?: T;
+  transformedUrl?: T;
+  cloudinaryFolder?: T;
+  transformationPreset?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -274,6 +608,191 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "map-moments_select".
+ */
+export interface MapMomentsSelect<T extends boolean = true> {
+  title?: T;
+  description?: T;
+  locationName?: T;
+  coordinates?: T;
+  media?: T;
+  mediaType?: T;
+  submittedByName?: T;
+  submittedByEmail?: T;
+  status?: T;
+  featured?: T;
+  adminNotes?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tour-packages_select".
+ */
+export interface TourPackagesSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  tagline?: T;
+  description?: T;
+  coverImage?: T;
+  gallery?: T;
+  durationDays?: T;
+  priceFromEUR?: T;
+  pricePerPerson?: T;
+  minGroupSize?: T;
+  maxGroupSize?: T;
+  difficultyLevel?: T;
+  packageType?: T;
+  included?:
+    | T
+    | {
+        item?: T;
+        id?: T;
+      };
+  notIncluded?:
+    | T
+    | {
+        item?: T;
+        id?: T;
+      };
+  itinerary?:
+    | T
+    | {
+        day?: T;
+        title?: T;
+        description?: T;
+        id?: T;
+      };
+  isFeatured?: T;
+  isActive?: T;
+  sortOrder?: T;
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "destinations_select".
+ */
+export interface DestinationsSelect<T extends boolean = true> {
+  name?: T;
+  slug?: T;
+  region?: T;
+  shortDescription?: T;
+  description?: T;
+  coverImage?: T;
+  gallery?: T;
+  bestSeason?: T;
+  latitude?: T;
+  longitude?: T;
+  isFeatured?: T;
+  isActive?: T;
+  sortOrder?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blog-posts_select".
+ */
+export interface BlogPostsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  excerpt?: T;
+  content?: T;
+  coverImage?: T;
+  authorName?: T;
+  tags?:
+    | T
+    | {
+        tag?: T;
+        id?: T;
+      };
+  publishedAt?: T;
+  social?:
+    | T
+    | {
+        shareTitle?: T;
+        shareDescription?: T;
+        youtubeUrl?: T;
+        shareImages?: T;
+      };
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faq-items_select".
+ */
+export interface FaqItemsSelect<T extends boolean = true> {
+  question?: T;
+  answer?: T;
+  category?: T;
+  isActive?: T;
+  sortOrder?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "testimonials_select".
+ */
+export interface TestimonialsSelect<T extends boolean = true> {
+  authorName?: T;
+  authorCountry?: T;
+  authorAvatar?: T;
+  rating?: T;
+  content?: T;
+  package?: T;
+  tourDate?: T;
+  isFeatured?: T;
+  isActive?: T;
+  sortOrder?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "booking-requests_select".
+ */
+export interface BookingRequestsSelect<T extends boolean = true> {
+  firstName?: T;
+  lastName?: T;
+  email?: T;
+  phone?: T;
+  country?: T;
+  preferredDatesFrom?: T;
+  preferredDatesTo?: T;
+  numAdults?: T;
+  numChildren?: T;
+  package?: T;
+  packageName?: T;
+  message?: T;
+  language?: T;
+  source?: T;
+  utmSource?: T;
+  utmMedium?: T;
+  utmCampaign?: T;
+  status?: T;
+  adminNotes?: T;
+  followUpAt?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -314,6 +833,40 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-settings".
+ */
+export interface SiteSetting {
+  id: string;
+  siteName?: string | null;
+  defaultSeoTitle?: string | null;
+  defaultSeoDescription?: string | null;
+  phone?: string | null;
+  email?: string | null;
+  whatsappUrl?: string | null;
+  address?: string | null;
+  logo?: (string | null) | Media;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-settings_select".
+ */
+export interface SiteSettingsSelect<T extends boolean = true> {
+  siteName?: T;
+  defaultSeoTitle?: T;
+  defaultSeoDescription?: T;
+  phone?: T;
+  email?: T;
+  whatsappUrl?: T;
+  address?: T;
+  logo?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

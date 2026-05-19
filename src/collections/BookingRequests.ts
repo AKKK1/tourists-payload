@@ -1,0 +1,46 @@
+﻿import type { CollectionConfig } from 'payload'
+
+export const BookingRequests: CollectionConfig = {
+  slug: 'booking-requests',
+  admin: {
+    group: 'CRM',
+    useAsTitle: 'email',
+    defaultColumns: ['firstName', 'lastName', 'email', 'status', 'createdAt'],
+  },
+  access: {
+    create: () => true,
+    read: ({ req }) => Boolean(req.user),
+    update: ({ req }) => Boolean(req.user),
+    delete: ({ req }) => Boolean(req.user),
+  },
+  fields: [
+    { name: 'firstName', type: 'text', required: true },
+    { name: 'lastName', type: 'text', required: true },
+    { name: 'email', type: 'email', required: true },
+    { name: 'phone', type: 'text' },
+    { name: 'country', type: 'text' },
+    { name: 'preferredDatesFrom', type: 'date' },
+    { name: 'preferredDatesTo', type: 'date' },
+    { name: 'numAdults', type: 'number', defaultValue: 2 },
+    { name: 'numChildren', type: 'number', defaultValue: 0 },
+    { name: 'package', type: 'relationship', relationTo: 'tour-packages' },
+    { name: 'packageName', type: 'text' },
+    { name: 'message', type: 'textarea' },
+    { name: 'language', type: 'select', defaultValue: 'de', options: ['de', 'en', 'ka'] },
+    { name: 'source', type: 'text', defaultValue: 'website' },
+    { name: 'utmSource', type: 'text' },
+    { name: 'utmMedium', type: 'text' },
+    { name: 'utmCampaign', type: 'text' },
+    {
+      name: 'status',
+      type: 'select',
+      defaultValue: 'new',
+      required: true,
+      options: ['new', 'contacted', 'qualified', 'quoted', 'booked', 'cancelled', 'lost'],
+      admin: { position: 'sidebar' },
+    },
+    { name: 'adminNotes', type: 'textarea' },
+    { name: 'followUpAt', type: 'date', admin: { position: 'sidebar', date: { pickerAppearance: 'dayAndTime' } } },
+  ],
+  timestamps: true,
+}

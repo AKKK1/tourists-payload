@@ -1,0 +1,142 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-earth: var(--earth);
+  --color-forest: var(--forest);
+  --color-stone-brand: var(--stone-brand);
+}
+
+/* Georgia Soul Travels — Nature-based Premium Theme */
+:root {
+  --radius: 0.5rem;
+
+  /* Base — warm near-white */
+  --background: oklch(0.985 0.005 75);
+  --foreground: oklch(0.18 0.01 60);
+
+  /* Cards */
+  --card: oklch(0.98 0.006 72);
+  --card-foreground: oklch(0.18 0.01 60);
+
+  /* Popovers */
+  --popover: oklch(0.99 0.003 72);
+  --popover-foreground: oklch(0.18 0.01 60);
+
+  /* Primary — deep forest green */
+  --primary: oklch(0.32 0.08 155);
+  --primary-foreground: oklch(0.97 0.01 72);
+
+  /* Secondary — warm sage */
+  --secondary: oklch(0.88 0.035 145);
+  --secondary-foreground: oklch(0.25 0.06 150);
+
+  /* Muted */
+  --muted: oklch(0.93 0.01 80);
+  --muted-foreground: oklch(0.52 0.02 60);
+
+  /* Accent — amber/gold warmth */
+  --accent: oklch(0.94 0.04 80);
+  --accent-foreground: oklch(0.22 0.04 60);
+
+  /* Destructive */
+  --destructive: oklch(0.577 0.245 27.325);
+
+  /* Borders */
+  --border: oklch(0.88 0.01 75);
+  --input: oklch(0.88 0.01 75);
+  --ring: oklch(0.45 0.08 150);
+
+  /* Brand extras */
+  --gold: oklch(0.72 0.14 68);
+  --gold-foreground: oklch(0.18 0.04 55);
+  --earth: oklch(0.58 0.06 60);
+  --forest: oklch(0.28 0.09 155);
+  --stone-brand: oklch(0.72 0.02 75);
+
+  /* Charts (reuse brand palette) */
+  --chart-1: oklch(0.32 0.08 155);
+  --chart-2: oklch(0.72 0.14 68);
+  --chart-3: oklch(0.58 0.06 60);
+  --chart-4: oklch(0.55 0.1 180);
+  --chart-5: oklch(0.65 0.12 130);
+
+  --sidebar: oklch(0.97 0.007 72);
+  --sidebar-foreground: oklch(0.18 0.01 60);
+  --sidebar-primary: oklch(0.32 0.08 155);
+  --sidebar-primary-foreground: oklch(0.97 0.01 72);
+  --sidebar-accent: oklch(0.93 0.01 80);
+  --sidebar-accent-foreground: oklch(0.18 0.01 60);
+  --sidebar-border: oklch(0.88 0.01 75);
+  --sidebar-ring: oklch(0.45 0.08 150);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: oklch(0.93 0.01 80); }
+::-webkit-scrollbar-thumb {
+  background: oklch(0.45 0.08 150);
+  border-radius: 3px;
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Ticker animation */
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-track {
+  animation: ticker 50s linear infinite;
+}
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+/* Hero text animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fadeUp 1s ease forwards; }
+.animate-fade-up-1 { animation: fadeUp 1s ease 0.2s forwards; opacity: 0; }
+.animate-fade-up-2 { animation: fadeUp 1s ease 0.4s forwards; opacity: 0; }
+.animate-fade-up-3 { animation: fadeUp 1s ease 0.6s forwards; opacity: 0; }
+.animate-fade-up-4 { animation: fadeUp 1s ease 0.8s forwards; opacity: 0; }
