@@ -42,7 +42,7 @@ export function HeroSection() {
             {/* Pre-headline badge */}
             <div className="animate-fade-up mb-4 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 backdrop-blur-sm px-3 py-1.5">
               <span className="text-xs font-medium text-white/90 uppercase tracking-wider">
-                🇬🇪 Georgia Soul Travels
+                🇬🇪 GeorgianSoul
               </span>
             </div>
 

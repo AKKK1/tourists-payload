@@ -53,7 +53,7 @@ export function BookingCTABanner() {
             size="lg"
             className="border-white/30 text-white hover:bg-white/10 bg-transparent font-medium text-base"
           >
-            <a href="https://wa.me/995599000000" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/491772209295" target="_blank" rel="noopener noreferrer">
               💬 WhatsApp
             </a>
           </Button>

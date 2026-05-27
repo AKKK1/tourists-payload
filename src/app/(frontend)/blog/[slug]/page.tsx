@@ -118,13 +118,13 @@ export async function generateMetadata({ params }: Args): Promise<Metadata> {
   if (!post) {
     return {
       title: 'Georgia Travel Article',
-      description: 'Read a Georgia travel guide from Georgia Soul Travels.',
+      description: 'Read a Georgia travel guide from GeorgianSoul.',
     }
   }
 
   return {
     title: post.seo?.title || post.title,
-    description: post.seo?.description || post.excerpt || 'Read a Georgia travel guide from Georgia Soul Travels.',
+    description: post.seo?.description || post.excerpt || 'Read a Georgia travel guide from GeorgianSoul.',
     openGraph: {
       title: post.seo?.title || post.title,
       description: post.seo?.description || post.excerpt || undefined,

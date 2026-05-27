@@ -6,7 +6,7 @@ import { useSearchParams } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { CircleCheck as CheckCircle2, CircleAlert as AlertCircle, Mail, Phone, MapPin } from 'lucide-react'
+import { CircleCheck as CheckCircle2, CircleAlert as AlertCircle, Mail, MessageCircle, MapPin } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -117,7 +117,7 @@ export function BookingPage() {
       <div className="bg-[oklch(0.32_0.08_155)] py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50 mb-3 block">
-            Georgia Soul Travels
+            GeorgianSoul
           </span>
           <h1 className="text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
             {t('booking.title')}
@@ -139,7 +139,7 @@ export function BookingPage() {
                 {lang === 'de' ? 'Neue Anfrage' : 'New request'}
               </Button>
               <Button asChild>
-                <a href="https://wa.me/995599000000" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/491772209295" target="_blank" rel="noopener noreferrer">
                   WhatsApp
                 </a>
               </Button>
@@ -183,7 +183,7 @@ export function BookingPage() {
                   </div>
                 </div>
 
-                {/* Email + Phone */}
+                {/* Email + WhatsApp */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
                     <Label htmlFor="email" className="text-sm font-medium">
@@ -204,7 +204,7 @@ export function BookingPage() {
                     <Input
                       id="phone"
                       {...register('phone')}
-                      placeholder="+49 151 ..."
+                    placeholder="+49 177 ..."
                     />
                   </div>
                 </div>
@@ -348,13 +348,13 @@ export function BookingPage() {
                   {lang === 'de' ? 'Direkter Kontakt' : 'Direct contact'}
                 </h3>
                 <div className="space-y-3">
-                  <a href="mailto:info@georgiasoul.travel" className="flex items-center gap-2.5 text-sm text-foreground hover:text-[oklch(0.32_0.08_155)] transition-colors">
+                  <a href="mailto:info@georgiansoul.online" className="flex items-center gap-2.5 text-sm text-foreground hover:text-[oklch(0.32_0.08_155)] transition-colors">
                     <Mail className="w-4 h-4 shrink-0 text-muted-foreground" />
-                    info@georgiasoul.travel
+                    info@georgiansoul.online
                   </a>
-                  <a href="https://wa.me/995599000000" className="flex items-center gap-2.5 text-sm text-foreground hover:text-[oklch(0.32_0.08_155)] transition-colors">
-                    <Phone className="w-4 h-4 shrink-0 text-muted-foreground" />
-                    +995 599 000 000
+                  <a href="https://wa.me/491772209295" className="flex items-center gap-2.5 text-sm text-foreground hover:text-[oklch(0.32_0.08_155)] transition-colors">
+                    <MessageCircle className="w-4 h-4 shrink-0 text-muted-foreground" />
+                    +49 177 2209295
                   </a>
                   <div className="flex items-center gap-2.5 text-sm text-muted-foreground">
                     <MapPin className="w-4 h-4 shrink-0" />

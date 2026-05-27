@@ -63,7 +63,7 @@ export function WhyGeorgiaSection() {
           <blockquote className="text-xl sm:text-2xl font-medium text-white/90 italic max-w-2xl mx-auto leading-relaxed">
             "Georgien ist nicht nur ein Reiseziel — es ist ein Gefühl."
           </blockquote>
-          <p className="mt-3 text-sm text-white/50">— Georgia Soul Travels</p>
+          <p className="mt-3 text-sm text-white/50">— GeorgianSoul</p>
         </div>
       </div>
     </section>

@@ -24,16 +24,16 @@ export function PrivacyPage() {
           <div className="prose prose-sm max-w-none space-y-8 text-muted-foreground leading-relaxed">
             <section>
               <h2 className="text-xl font-bold text-foreground mb-3">1. Verantwortlicher</h2>
-              <p>Georgia Soul Travels<br />
+              <p>GeorgianSoul<br />
               Rustaveli Avenue 42<br />
               0108 Tiflis, Georgien<br />
-              E-Mail: hello@georgiasoul.travel<br />
-              Telefon: +995 599 000 000</p>
+              E-Mail: hello@georgiansoul.online<br />
+              WhatsApp: +49 177 2209295</p>
             </section>
 
             <section>
               <h2 className="text-xl font-bold text-foreground mb-3">2. Erhebung und Verarbeitung personenbezogener Daten</h2>
-              <p>Wir erheben personenbezogene Daten nur, wenn Sie uns diese aktiv mitteilen — etwa beim Ausfüllen des Buchungsformulars. Dies umfasst: Name, E-Mail-Adresse, Telefonnummer, Reisedaten und optionale Nachricht.</p>
+              <p>Wir erheben personenbezogene Daten nur, wenn Sie uns diese aktiv mitteilen — etwa beim Ausfüllen des Buchungsformulars. Dies umfasst: Name, E-Mail-Adresse, WhatsApp-Nummer, Reisedaten und optionale Nachricht.</p>
               <p className="mt-3">Diese Daten verwenden wir ausschließlich zur Bearbeitung Ihrer Anfrage und zur Kommunikation im Rahmen Ihrer Buchung.</p>
             </section>
 
@@ -54,7 +54,7 @@ export function PrivacyPage() {
 
             <section>
               <h2 className="text-xl font-bold text-foreground mb-3">6. Ihre Rechte</h2>
-              <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie Datenübertragbarkeit. Zur Ausübung Ihrer Rechte wenden Sie sich bitte an: hello@georgiasoul.travel</p>
+              <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie Datenübertragbarkeit. Zur Ausübung Ihrer Rechte wenden Sie sich bitte an: hello@georgiansoul.online</p>
             </section>
 
             <section>
@@ -64,23 +64,23 @@ export function PrivacyPage() {
 
             <section>
               <h2 className="text-xl font-bold text-foreground mb-3">8. Kontakt Datenschutz</h2>
-              <p>Bei Fragen zum Datenschutz wenden Sie sich an: hello@georgiasoul.travel</p>
+              <p>Bei Fragen zum Datenschutz wenden Sie sich an: hello@georgiansoul.online</p>
             </section>
           </div>
         ) : (
           <div className="prose prose-sm max-w-none space-y-8 text-muted-foreground leading-relaxed">
             <section>
               <h2 className="text-xl font-bold text-foreground mb-3">1. Controller</h2>
-              <p>Georgia Soul Travels<br />
+              <p>GeorgianSoul<br />
               Rustaveli Avenue 42<br />
               0108 Tbilisi, Georgia<br />
-              Email: hello@georgiasoul.travel<br />
-              Phone: +995 599 000 000</p>
+              Email: hello@georgiansoul.online<br />
+              WhatsApp: +49 177 2209295</p>
             </section>
 
             <section>
               <h2 className="text-xl font-bold text-foreground mb-3">2. Collection and Processing of Personal Data</h2>
-              <p>We only collect personal data when you actively provide it to us — for example when filling out the booking form. This includes: name, email address, phone number, travel dates and optional message.</p>
+              <p>We only collect personal data when you actively provide it to us — for example when filling out the booking form. This includes: name, email address, WhatsApp number, travel dates and optional message.</p>
               <p className="mt-3">We use this data exclusively to process your inquiry and for communication in connection with your booking.</p>
             </section>
 
@@ -101,7 +101,7 @@ export function PrivacyPage() {
 
             <section>
               <h2 className="text-xl font-bold text-foreground mb-3">6. Your Rights</h2>
-              <p>You have the right to access, rectification, deletion, restriction of processing and data portability. To exercise your rights please contact: hello@georgiasoul.travel</p>
+              <p>You have the right to access, rectification, deletion, restriction of processing and data portability. To exercise your rights please contact: hello@georgiansoul.online</p>
             </section>
 
             <section>

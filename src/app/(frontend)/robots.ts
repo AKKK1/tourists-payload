@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/admin/",
     },
-    sitemap: "https://www.georgiasoul.travel/sitemap.xml",
+    sitemap: "https://georgiansoul.online/sitemap.xml",
   }
 }

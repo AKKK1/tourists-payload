@@ -24,12 +24,12 @@ export function TermsPage() {
           <div className="space-y-8 text-muted-foreground leading-relaxed">
             <section>
               <h2 className="text-xl font-bold text-foreground mb-3">§1 Anbieter</h2>
-              <p>Georgia Soul Travels, Rustaveli Avenue 42, 0108 Tiflis, Georgien. Diese AGB gelten für alle Buchungen und Reisedienstleistungen, die über unsere Website oder direkt bei uns gebucht werden.</p>
+              <p>GeorgianSoul, Rustaveli Avenue 42, 0108 Tiflis, Georgien. Diese AGB gelten für alle Buchungen und Reisedienstleistungen, die über unsere Website oder direkt bei uns gebucht werden.</p>
             </section>
 
             <section>
               <h2 className="text-xl font-bold text-foreground mb-3">§2 Buchung und Vertragsschluss</h2>
-              <p>Mit dem Absenden des Buchungsformulars übermitteln Sie eine unverbindliche Anfrage. Eine verbindliche Buchung entsteht erst nach schriftlicher Buchungsbestätigung durch Georgia Soul Travels und Eingang der Anzahlung (30% des Reisepreises).</p>
+              <p>Mit dem Absenden des Buchungsformulars übermitteln Sie eine unverbindliche Anfrage. Eine verbindliche Buchung entsteht erst nach schriftlicher Buchungsbestätigung durch GeorgianSoul und Eingang der Anzahlung (30% des Reisepreises).</p>
             </section>
 
             <section>
@@ -50,7 +50,7 @@ export function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-foreground mb-3">§5 Stornierung durch Georgia Soul Travels</h2>
+              <h2 className="text-xl font-bold text-foreground mb-3">§5 Stornierung durch GeorgianSoul</h2>
               <p>Bei höherer Gewalt, behördlichen Einschränkungen oder unzureichender Teilnehmerzahl behalten wir uns das Recht vor, Reisen abzusagen. In diesem Fall werden bereits gezahlte Beträge vollständig erstattet.</p>
             </section>
 
@@ -61,7 +61,7 @@ export function TermsPage() {
 
             <section>
               <h2 className="text-xl font-bold text-foreground mb-3">§7 Haftung</h2>
-              <p>Georgia Soul Travels haftet für Schäden, die durch schuldhafte Verletzung einer Hauptleistungspflicht entstehen. Für leichte Fahrlässigkeit bei Verletzung nicht wesentlicher Pflichten ist die Haftung ausgeschlossen.</p>
+              <p>GeorgianSoul haftet für Schäden, die durch schuldhafte Verletzung einer Hauptleistungspflicht entstehen. Für leichte Fahrlässigkeit bei Verletzung nicht wesentlicher Pflichten ist die Haftung ausgeschlossen.</p>
             </section>
 
             <section>
@@ -71,19 +71,19 @@ export function TermsPage() {
 
             <section>
               <h2 className="text-xl font-bold text-foreground mb-3">§9 Kontakt</h2>
-              <p>Georgia Soul Travels, hello@georgiasoul.travel, +995 599 000 000</p>
+              <p>GeorgianSoul, hello@georgiansoul.online, WhatsApp: +49 177 2209295</p>
             </section>
           </div>
         ) : (
           <div className="space-y-8 text-muted-foreground leading-relaxed">
             <section>
               <h2 className="text-xl font-bold text-foreground mb-3">1. Provider</h2>
-              <p>Georgia Soul Travels, Rustaveli Avenue 42, 0108 Tbilisi, Georgia. These terms apply to all bookings and travel services booked through our website or directly with us.</p>
+              <p>GeorgianSoul, Rustaveli Avenue 42, 0108 Tbilisi, Georgia. These terms apply to all bookings and travel services booked through our website or directly with us.</p>
             </section>
 
             <section>
               <h2 className="text-xl font-bold text-foreground mb-3">2. Booking and Contract Formation</h2>
-              <p>By submitting the booking form you send a non-binding inquiry. A binding booking is only formed after written booking confirmation by Georgia Soul Travels and receipt of the deposit (30% of the travel price).</p>
+              <p>By submitting the booking form you send a non-binding inquiry. A binding booking is only formed after written booking confirmation by GeorgianSoul and receipt of the deposit (30% of the travel price).</p>
             </section>
 
             <section>
@@ -104,7 +104,7 @@ export function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-foreground mb-3">5. Cancellation by Georgia Soul Travels</h2>
+              <h2 className="text-xl font-bold text-foreground mb-3">5. Cancellation by GeorgianSoul</h2>
               <p>In cases of force majeure, governmental restrictions or insufficient participants, we reserve the right to cancel trips. In this case, amounts already paid will be fully refunded.</p>
             </section>
 
@@ -115,7 +115,7 @@ export function TermsPage() {
 
             <section>
               <h2 className="text-xl font-bold text-foreground mb-3">7. Liability</h2>
-              <p>Georgia Soul Travels is liable for damages arising from culpable breach of a main performance obligation. Liability for slight negligence in breach of non-essential obligations is excluded.</p>
+              <p>GeorgianSoul is liable for damages arising from culpable breach of a main performance obligation. Liability for slight negligence in breach of non-essential obligations is excluded.</p>
             </section>
 
             <section>

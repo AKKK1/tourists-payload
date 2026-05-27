@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
-import { Mountain, Mail, Phone, MapPin } from 'lucide-react'
+import { Mountain, Mail, MessageCircle, MapPin } from 'lucide-react'
 import { Separator } from '@/components/ui/separator'
 
 export function Footer() {
@@ -29,8 +29,8 @@ export function Footer() {
                 <Mountain className="w-5 h-5 text-white" />
               </div>
               <div>
-                <div className="font-bold text-base leading-none text-white">Georgia Soul</div>
-                <div className="text-xs leading-none mt-0.5 text-white/60">Travels</div>
+                <div className="font-bold text-base leading-none text-white">GeorgianSoul</div>
+                <div className="text-xs leading-none mt-0.5 text-white/60 uppercase">Online</div>
               </div>
             </Link>
             <p className="text-sm text-white/60 leading-relaxed mb-6">
@@ -93,20 +93,20 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:info@georgiasoul.travel"
+                  href="mailto:info@georgiansoul.online"
                   className="flex items-center gap-2.5 text-sm text-white/60 hover:text-white transition-colors"
                 >
                   <Mail className="w-4 h-4 shrink-0" />
-                  info@georgiasoul.travel
+                  info@georgiansoul.online
                 </a>
               </li>
               <li>
                 <a
-                  href="https://wa.me/995599000000"
+                  href="https://wa.me/491772209295"
                   className="flex items-center gap-2.5 text-sm text-white/60 hover:text-white transition-colors"
                 >
-                  <Phone className="w-4 h-4 shrink-0" />
-                  +995 599 000 000
+                  <MessageCircle className="w-4 h-4 shrink-0" />
+                  +49 177 2209295
                 </a>
               </li>
               <li className="flex items-center gap-2.5 text-sm text-white/60">
@@ -150,8 +150,8 @@ export function Footer() {
         <Separator className="my-8 bg-white/10" />
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/40">
-          <span>© {year} Georgia Soul Travels. {t('footer.rights')}</span>
-          <span>Made with ♥ in Georgia</span>
+          <span>&copy; {year} GeorgianSoul. {t('footer.rights')}</span>
+          <span>Made in Georgia</span>
         </div>
       </div>
     </footer>

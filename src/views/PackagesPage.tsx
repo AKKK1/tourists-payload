@@ -279,7 +279,7 @@ export function PackagesPage() {
       <div className="bg-muted/30 border-b border-border py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[oklch(0.45_0.08_150)] mb-3 block">
-            Georgia Soul Travels
+            GeorgianSoul
           </span>
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground tracking-tight mb-4">
             {t('packages.title')}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Gori fortress icon">
+  <rect width="64" height="64" rx="14" fill="#143a2a"/>
+  <path d="M9 47h46l-4-14-7-3-5-10-7 8-6-12-6 13-7 4-4 14Z" fill="#d6b36a"/>
+  <path d="M18 35V23h6v5h5v-8h6v8h5v-5h6v12l4 12H14l4-12Z" fill="#f4df9a"/>
+  <path d="M16 47h32l-3-8H19l-3 8Z" fill="#8c5a2e"/>
+  <path d="M29 47V35a3 3 0 0 1 6 0v12h-6Z" fill="#143a2a"/>
+  <path d="M9 49h46" stroke="#f4df9a" stroke-width="3" stroke-linecap="round"/>
+</svg>

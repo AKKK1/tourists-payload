@@ -45,7 +45,7 @@ async function geocodeLocation(locationName: string) {
 
   const response = await fetch(fallbackURL, {
     headers: {
-      'User-Agent': 'GeorgiaSoulTravelsMap/1.0',
+      'User-Agent': 'GeorgianSoulMap/1.0',
     },
   })
   const data = await response.json()

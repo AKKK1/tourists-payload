@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.georgiasoul.travel/sitemap.xml
+Sitemap: https://georgiansoul.online/sitemap.xml

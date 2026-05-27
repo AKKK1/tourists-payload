@@ -30,7 +30,7 @@ export function AboutPage() {
         </div>
         <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50 mb-3 block">
-            Georgia Soul Travels
+            GeorgianSoul
           </span>
           <h1 className="text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
             {t('about.title')}

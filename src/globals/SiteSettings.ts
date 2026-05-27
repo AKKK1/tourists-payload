@@ -9,7 +9,7 @@ export const SiteSettings: GlobalConfig = {
     read: () => true,
   },
   fields: [
-    { name: 'siteName', type: 'text', defaultValue: 'Georgia Soul Travels', localized: true },
+    { name: 'siteName', type: 'text', defaultValue: 'GeorgianSoul', localized: true },
     { name: 'defaultSeoTitle', type: 'text', localized: true },
     { name: 'defaultSeoDescription', type: 'textarea', localized: true },
     { name: 'phone', type: 'text' },

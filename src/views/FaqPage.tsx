@@ -123,7 +123,7 @@ export function FaqPage() {
               <Link href="/booking">{t('common.contactUs')}</Link>
             </Button>
             <Button asChild variant="outline">
-              <a href="https://wa.me/995599000000" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/491772209295" target="_blank" rel="noopener noreferrer">
                 💬 WhatsApp
               </a>
             </Button>

@@ -54,7 +54,7 @@ export const BlogPosts: CollectionConfig = {
     { name: 'excerpt', type: 'textarea', localized: true },
     { name: 'content', type: 'richText', localized: true },
     { name: 'coverImage', type: 'upload', relationTo: 'media' },
-    { name: 'authorName', type: 'text', defaultValue: 'Georgia Soul Travels' },
+    { name: 'authorName', type: 'text', defaultValue: 'GeorgianSoul' },
     {
       name: 'tags',
       type: 'array',

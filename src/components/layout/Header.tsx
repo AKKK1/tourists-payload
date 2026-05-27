@@ -77,13 +77,13 @@ export function Header() {
                 'font-bold text-base leading-none tracking-tight transition-colors',
                 isTransparent ? 'text-white' : 'text-foreground'
               )}>
-                Georgia Soul
+                GeorgianSoul
               </div>
               <div className={cn(
-                'text-xs leading-none mt-0.5 transition-colors',
+                'text-xs leading-none mt-0.5 uppercase transition-colors',
                 isTransparent ? 'text-white/70' : 'text-muted-foreground'
               )}>
-                Travels
+                Online
               </div>
             </div>
           </Link>
