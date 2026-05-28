@@ -391,8 +391,8 @@ export function GeorgiaDiscoveryMap() {
           <FitGeorgiaBounds />
           <FocusSelectedMoment moment={selectedMoment} />
           <TileLayer
-            attribution="&copy; Stadia Maps &copy; OpenMapTiles &copy; OpenStreetMap contributors"
-            url="https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png"
+            attribution="&copy; OpenStreetMap contributors"
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           {groupedMoments.map((group) => {
             const first = group[0]
