@@ -3,7 +3,7 @@
 import 'leaflet/dist/leaflet.css'
 
 import L from 'leaflet'
-import { Camera, ChevronLeft, ChevronRight, Loader2, MapPin, Plus, Route, Upload, X } from 'lucide-react'
+import { Camera, ChevronDown, ChevronLeft, ChevronRight, Loader2, MapPin, Plus, Route, Upload, X } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import { MapContainer, Marker, Polyline, Popup, TileLayer, useMap } from 'react-leaflet'
 
@@ -348,6 +348,10 @@ export function GeorgiaDiscoveryMap() {
     setRoute((items) => (items.some((item) => item.id === moment.id) ? items : [...items, moment]))
   }
 
+  const scrollToGallery = () => {
+    document.getElementById('map-moment-gallery')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
   return (
     <main className="bg-background">
       <UploadPanel onUploaded={loadMoments} />
@@ -358,6 +362,15 @@ export function GeorgiaDiscoveryMap() {
       >
         <Upload className="size-4" />
         Add photo
+      </button>
+      <button
+        type="button"
+        className="fixed bottom-20 left-1/2 z-[10000] inline-flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/30 bg-background/95 px-5 py-3 text-sm font-bold text-foreground shadow-2xl backdrop-blur hover:bg-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+        onClick={scrollToGallery}
+        aria-label="Scroll to discovery gallery"
+      >
+        <ChevronDown className="size-5 animate-bounce text-primary" />
+        Gallery
       </button>
       <section className="relative h-svh overflow-hidden bg-foreground pt-16 lg:pt-20">
         <div className="absolute right-4 top-28 z-40 rounded-full bg-background/95 px-3 py-2 text-xs font-medium shadow-lg backdrop-blur">
@@ -396,7 +409,9 @@ export function GeorgiaDiscoveryMap() {
         <RouteDrawer route={route} onClear={() => setRoute([])} />
         <div className="pointer-events-none absolute inset-x-0 top-16 z-30 h-28 bg-gradient-to-b from-black/25 to-transparent lg:top-20" />
       </section>
-      <MapMomentGallery moments={moments} selectedId={selectedMoment?.id} onSelect={setSelectedMoment} />
+      <div id="map-moment-gallery">
+        <MapMomentGallery moments={moments} selectedId={selectedMoment?.id} onSelect={setSelectedMoment} />
+      </div>
       <style jsx global>{`
         .leaflet-container { font-family: inherit; }
         .map-moment-marker { display: grid; place-items: center; }

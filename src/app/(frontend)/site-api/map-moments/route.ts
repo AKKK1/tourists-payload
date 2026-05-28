@@ -68,20 +68,25 @@ async function geocodeLocation(locationName: string) {
 }
 
 export async function GET() {
-  const payload = await getPayload({ config })
-  const moments = await payload.find({
-    collection: 'map-moments',
-    depth: 1,
-    limit: 200,
-    sort: '-createdAt',
-    where: {
-      status: {
-        equals: 'approved',
+  try {
+    const payload = await getPayload({ config })
+    const moments = await payload.find({
+      collection: 'map-moments',
+      depth: 1,
+      limit: 200,
+      sort: '-createdAt',
+      where: {
+        status: {
+          equals: 'approved',
+        },
       },
-    },
-  })
+    })
 
-  return Response.json(moments)
+    return Response.json(moments)
+  } catch (error) {
+    console.error('Map moments GET failed:', error)
+    return Response.json({ message: 'Map moments could not be loaded.' }, { status: 500 })
+  }
 }
 
 export async function POST(request: Request) {
