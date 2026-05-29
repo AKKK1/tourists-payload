@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
 import { ArrowRight, Clock, Users, Check } from 'lucide-react'
+import { useEffect, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
@@ -43,9 +44,53 @@ const packageData = [
   },
 ]
 
+type PreviewPackage = (typeof packageData)[number] & {
+  image?: string
+  names?: Record<string, string>
+  taglines?: Record<string, string>
+}
+
 export function PackagesPreview() {
   const { t, i18n } = useTranslation()
   const lang = i18n.language as 'de' | 'en' | 'ka'
+  const [packages, setPackages] = useState<PreviewPackage[]>(packageData)
+
+  useEffect(() => {
+    let mounted = true
+
+    async function loadPackages() {
+      try {
+        const response = await fetch('/site-api/tour-packages', { cache: 'no-store' })
+        const data = await response.json().catch(() => ({ docs: [] }))
+        const docs = Array.isArray(data.docs) ? data.docs.slice(0, 3) : []
+
+        if (mounted && docs.length > 0) {
+          setPackages(
+            docs.map((pkg: any) => ({
+              slug: pkg.slug,
+              badge: pkg.type === 'custom' ? 'Individuell' : `${pkg.duration} Tage`,
+              badge_en: pkg.type === 'custom' ? 'Custom' : `${pkg.duration} days`,
+              price: pkg.price > 0 ? `€ ${Number(pkg.price).toLocaleString('de')}` : null,
+              highlight: Boolean(pkg.highlight),
+              image: pkg.image,
+              names: pkg.names,
+              taglines: pkg.taglines,
+              features_de: (pkg.included?.de || []).slice(0, 4),
+              features_en: (pkg.included?.en || pkg.included?.de || []).slice(0, 4),
+            })),
+          )
+        }
+      } catch (error) {
+        console.error(error)
+      }
+    }
+
+    loadPackages()
+
+    return () => {
+      mounted = false
+    }
+  }, [])
 
   const getName = (slug: string) => {
     if (slug === 'basic-escape') return lang === 'de' ? 'Basic Escape' : 'Basic Escape'
@@ -65,6 +110,9 @@ export function PackagesPreview() {
       : 'Your Georgia. Your pace. Your story.'
   }
 
+  const getPackageName = (pkg: PreviewPackage) => pkg.names?.[lang] || pkg.names?.en || getName(pkg.slug)
+  const getPackageTagline = (pkg: PreviewPackage) => pkg.taglines?.[lang] || pkg.taglines?.en || getTagline(pkg.slug)
+
   return (
     <section className="py-20 lg:py-28 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,7 +131,7 @@ export function PackagesPreview() {
 
         {/* Package cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {packageData.map((pkg) => (
+          {packages.map((pkg) => (
             <div
               key={pkg.slug}
               className={cn(
@@ -102,8 +150,8 @@ export function PackagesPreview() {
               {/* Image */}
               <div className={cn('relative overflow-hidden', pkg.highlight ? 'h-52 pt-7' : 'h-52')}>
                 <img
-                  src={packageImages[pkg.slug]}
-                  alt={getName(pkg.slug)}
+                  src={pkg.image || packageImages[pkg.slug]}
+                  alt={getPackageName(pkg)}
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -120,8 +168,8 @@ export function PackagesPreview() {
 
               {/* Content */}
               <div className="flex flex-col flex-1 p-6">
-                <h3 className="text-xl font-bold text-foreground mb-1.5">{getName(pkg.slug)}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{getTagline(pkg.slug)}</p>
+                <h3 className="text-xl font-bold text-foreground mb-1.5">{getPackageName(pkg)}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{getPackageTagline(pkg)}</p>
 
                 {/* Features */}
                 <ul className="space-y-2 mb-6 flex-1">

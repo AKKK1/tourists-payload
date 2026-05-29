@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
@@ -100,8 +100,13 @@ export function AboutPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map(({ key, Icon, color }) => (
-              <div key={key} className="bg-card border border-border rounded-xl p-6 text-center hover:shadow-md transition-shadow">
-                <div className={`w-10 h-10 rounded-xl bg-muted flex items-center justify-center mx-auto mb-3 ${color}`}>
+              <div
+                key={key}
+                className="bg-card border border-border rounded-xl p-6 text-center hover:shadow-md transition-shadow"
+              >
+                <div
+                  className={`w-10 h-10 rounded-xl bg-muted flex items-center justify-center mx-auto mb-3 ${color}`}
+                >
                   <Icon className="w-5 h-5" />
                 </div>
                 <h3 className="font-semibold text-foreground">{t(`about.${key}` as any)}</h3>
@@ -115,23 +120,45 @@ export function AboutPage() {
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-foreground mb-3">{t('about.team')}</h2>
             <p className="text-muted-foreground">
-              {lang === 'de' ? 'Echte Georgier. Leidenschaftliche Gastgeber.' : 'Real Georgians. Passionate hosts.'}
+              {lang === 'de'
+                ? 'Echte Georgier. Leidenschaftliche Gastgeber.'
+                : 'Real Georgians. Passionate hosts.'}
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { name: 'Giorgi Beridze', role: lang === 'de' ? 'Gründer & Chefführer' : 'Founder & Lead Guide', langs: 'DE / EN / KA' },
-              { name: 'Nino Kvaratskhelia', role: lang === 'de' ? 'Reiseplanung & Kundenbetreuung' : 'Travel Planning & Guest Relations', langs: 'DE / EN' },
-              { name: 'Luka Jgenti', role: lang === 'de' ? 'Fahrer & lokaler Experte' : 'Driver & Local Expert', langs: 'EN / KA' },
+              {
+                name: 'Akaki Ch',
+                role: lang === 'de' ? 'Gründer & Chefführer' : 'Founder & Lead Guide',
+                langs: 'DE / EN / KA',
+              },
+              {
+                name: 'Akaki Cha',
+                role:
+                  lang === 'de'
+                    ? 'Reiseplanung & Kundenbetreuung'
+                    : 'Travel Planning & Guest Relations',
+                langs: 'DE / EN',
+              },
+              {
+                name: 'Akaki Chach',
+                role: lang === 'de' ? 'Fahrer & lokaler Experte' : 'Driver & Local Expert',
+                langs: 'EN / KA',
+              },
             ].map((member) => (
-              <div key={member.name} className="bg-card border border-border rounded-xl p-6 flex items-center gap-4">
+              <div
+                key={member.name}
+                className="bg-card border border-border rounded-xl p-6 flex items-center gap-4"
+              >
                 <div className="w-12 h-12 rounded-full bg-[oklch(0.32_0.08_155)]/10 flex items-center justify-center text-lg font-bold text-[oklch(0.32_0.08_155)] shrink-0">
                   {member.name[0]}
                 </div>
                 <div>
                   <div className="font-semibold text-foreground text-sm">{member.name}</div>
                   <div className="text-xs text-muted-foreground">{member.role}</div>
-                  <div className="text-xs text-[oklch(0.45_0.08_150)] mt-1 font-medium">{member.langs}</div>
+                  <div className="text-xs text-[oklch(0.45_0.08_150)] mt-1 font-medium">
+                    {member.langs}
+                  </div>
                 </div>
               </div>
             ))}

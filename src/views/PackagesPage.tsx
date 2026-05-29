@@ -5,10 +5,10 @@ import Link from 'next/link'
 import { Clock, Users, Check, X, ChevronDown, ChevronUp } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
 
-const packages = [
+const fallbackPackages = [
   {
     slug: 'basic-escape',
     image: '/package-basic-escape.webp',
@@ -140,7 +140,9 @@ const packages = [
   },
 ]
 
-function PackageCard({ pkg, lang }: { pkg: typeof packages[0]; lang: string }) {
+type TourPackage = typeof fallbackPackages[number]
+
+function PackageCard({ pkg, lang }: { pkg: TourPackage; lang: string }) {
   const { t } = useTranslation()
   const [showItinerary, setShowItinerary] = useState(false)
   const l = lang === 'de' ? 'de' : 'en'
@@ -272,6 +274,31 @@ function PackageCard({ pkg, lang }: { pkg: typeof packages[0]; lang: string }) {
 export function PackagesPage() {
   const { t, i18n } = useTranslation()
   const lang = i18n.language
+  const [packages, setPackages] = useState<TourPackage[]>(fallbackPackages)
+
+  useEffect(() => {
+    let mounted = true
+
+    async function loadPackages() {
+      try {
+        const response = await fetch('/site-api/tour-packages', { cache: 'no-store' })
+        const data = await response.json().catch(() => ({ docs: [] }))
+        const docs = Array.isArray(data.docs) ? data.docs : []
+
+        if (mounted && docs.length > 0) {
+          setPackages(docs)
+        }
+      } catch (error) {
+        console.error(error)
+      }
+    }
+
+    loadPackages()
+
+    return () => {
+      mounted = false
+    }
+  }, [])
 
   return (
     <main className="pt-20">

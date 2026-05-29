@@ -59,27 +59,34 @@ const de = {
     title: 'Warum Georgien?',
     subtitle: 'Ein Land, das Sie verändern wird.',
     reason1Title: 'Unberührte Natur',
-    reason1Desc: 'Wälder, Gletscher, Canyons und Berge — Georgien bewahrt eine Natur, die in Europa fast vergessen ist.',
+    reason1Desc:
+      'Wälder, Gletscher, Canyons und Berge — Georgien bewahrt eine Natur, die in Europa fast vergessen ist.',
     reason2Title: 'Echte Gastfreundschaft',
-    reason2Desc: 'Georgische Gastfreundschaft ist legendär. Kein Hotel-Service — echte Menschen, echte Wärme.',
+    reason2Desc:
+      'Georgische Gastfreundschaft ist legendär. Kein Hotel-Service — echte Menschen, echte Wärme.',
     reason3Title: 'Sichere Reise',
-    reason3Desc: 'Georgien gehört zu den sichersten Ländern Europas. Niedrige Kriminalität, freundliche Menschen.',
+    reason3Desc:
+      'Georgien gehört zu den sichersten Ländern Europas. Niedrige Kriminalität, freundliche Menschen.',
     reason4Title: 'Kulinarik & Wein',
-    reason4Desc: '8.000 Jahre Weinbaugeschichte. Hausgemachtes Essen. Khinkali, Khachapuri, Churchkhela.',
+    reason4Desc:
+      '8.000 Jahre Weinbaugeschichte. Hausgemachtes Essen. Khinkali, Khachapuri, Churchkhela.',
     reason5Title: 'Erschwinglich & Premium',
     reason5Desc: 'Hervorragende Qualität zu einem Bruchteil westeuropäischer Preise.',
     reason6Title: 'Digitaler Detox',
-    reason6Desc: 'Kein Handy-Signal in den Bergen. Nur Sie, die Natur und die Stille, die Sie gesucht haben.',
+    reason6Desc:
+      'Kein Handy-Signal in den Bergen. Nur Sie, die Natur und die Stille, die Sie gesucht haben.',
   },
   trust: {
     title: 'Wer steckt dahinter?',
-    subtitle: 'Wir sind ein kleines, leidenschaftliches Team aus Georgien — echte Einheimische, keine Touristenagenturen.',
+    subtitle:
+      'Wir sind ein kleines, leidenschaftliches Team aus Georgien — echte Einheimische, keine Touristenagenturen.',
     stat1: 'Zufriedene Gäste',
     stat2: 'Jahre Erfahrung',
     stat3: 'Reiseziele',
     stat4: 'Sprachen',
     promise: 'Unser Versprechen',
-    promiseText: 'Jede Reise, die wir planen, würden wir selbst gerne machen. Wir wählen Unterkünfte, Routen und Partner aus, die wir persönlich kennen und vertrauen.',
+    promiseText:
+      'Jede Reise, die wir planen, würden wir selbst gerne machen. Wir wählen Unterkünfte, Routen und Partner aus, die wir persönlich kennen und vertrauen.',
     transport: 'Modernes, sicheres Fahrzeugflotte',
     accommodation: 'Handverlesene Pensionen & Hotels',
     guide: 'Deutsch/Englisch sprechende Führer',
@@ -103,11 +110,13 @@ const de = {
     children: 'Kinder (0–17)',
     package: 'Paket auswählen',
     message: 'Ihre Nachricht (optional)',
-    messagePlaceholder: 'Erzählen Sie uns von Ihren Wünschen, besonderen Bedürfnissen oder Fragen...',
+    messagePlaceholder:
+      'Erzählen Sie uns von Ihren Wünschen, besonderen Bedürfnissen oder Fragen...',
     submit: 'Anfrage senden',
     submitting: 'Wird gesendet...',
     successTitle: 'Vielen Dank!',
-    successText: 'Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns innerhalb von 24 Stunden bei Ihnen.',
+    successText:
+      'Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns innerhalb von 24 Stunden bei Ihnen.',
     errorText: 'Es gab einen Fehler. Bitte versuchen Sie es erneut.',
     required: 'Pflichtfeld',
     selectPackage: '-- Paket wählen --',
@@ -119,9 +128,11 @@ const de = {
   about: {
     title: 'Über uns',
     subtitle: 'Wir sind GeorgianSoul — gegründet aus Liebe zu unserem Land.',
-    story: 'Was als persönliche Leidenschaft begann, ist heute ein kleines, feines Reiseunternehmen geworden. Wir bringen europäische Reisende in die Orte, die wir selbst lieben — echte Dörfer, echte Familien, echte Natur.',
+    story:
+      'Was als persönliche Leidenschaft begann, ist heute ein kleines, feines Reiseunternehmen geworden. Wir bringen europäische Reisende in die Orte, die wir selbst lieben — echte Dörfer, echte Familien, echte Natur.',
     mission: 'Unsere Mission',
-    missionText: 'Jedem Gast ein unvergessliches, authentisches Erlebnis zu bieten — fernab der Massentouristik, nah an der Seele Georgiens.',
+    missionText:
+      'Jedem Gast ein unvergessliches, authentisches Erlebnis zu bieten — fernab der Massentouristik, nah an der Seele Georgiens.',
     values: 'Unsere Werte',
     value1: 'Authentizität',
     value2: 'Nachhaltigkeit',
@@ -203,7 +214,8 @@ const en = {
   hero: {
     headline1: 'Escape the chaos',
     headline2: 'of the city.',
-    subheadline: 'Recover your soul in Georgia\'s untouched nature, mountains and warm-hearted people.',
+    subheadline:
+      "Recover your soul in Georgia's untouched nature, mountains and warm-hearted people.",
     cta: 'Explore tours',
     ctaSecondary: 'Learn more',
     scroll: 'Scroll',
@@ -219,7 +231,7 @@ const en = {
     days: 'days',
     learnMore: 'Learn more',
     bookThis: 'Book this trip',
-    included: 'What\'s included',
+    included: "What's included",
     notIncluded: 'Not included',
     itinerary: 'Itinerary',
     day: 'Day',
@@ -245,17 +257,20 @@ const en = {
     title: 'Why Georgia?',
     subtitle: 'A country that will change you.',
     reason1Title: 'Untouched Nature',
-    reason1Desc: 'Forests, glaciers, canyons and mountains — Georgia preserves a nature almost forgotten in Europe.',
+    reason1Desc:
+      'Forests, glaciers, canyons and mountains — Georgia preserves a nature almost forgotten in Europe.',
     reason2Title: 'Genuine Hospitality',
     reason2Desc: 'Georgian hospitality is legendary. Not hotel service — real people, real warmth.',
     reason3Title: 'Safe Travel',
-    reason3Desc: 'Georgia is among Europe\'s safest countries. Low crime rate, friendly locals.',
+    reason3Desc: "Georgia is among Europe's safest countries. Low crime rate, friendly locals.",
     reason4Title: 'Food & Wine',
-    reason4Desc: '8,000 years of winemaking history. Home-cooked food. Khinkali, Khachapuri, Churchkhela.',
+    reason4Desc:
+      '8,000 years of winemaking history. Home-cooked food. Khinkali, Khachapuri, Churchkhela.',
     reason5Title: 'Affordable & Premium',
     reason5Desc: 'Excellent quality at a fraction of Western European prices.',
     reason6Title: 'Digital Detox',
-    reason6Desc: 'No phone signal in the mountains. Just you, nature and the silence you\'ve been searching for.',
+    reason6Desc:
+      "No phone signal in the mountains. Just you, nature and the silence you've been searching for.",
   },
   trust: {
     title: 'Who are we?',
@@ -265,7 +280,8 @@ const en = {
     stat3: 'Destinations',
     stat4: 'Languages',
     promise: 'Our promise',
-    promiseText: 'Every trip we plan is one we would take ourselves. We choose accommodations, routes and partners we know and trust personally.',
+    promiseText:
+      'Every trip we plan is one we would take ourselves. We choose accommodations, routes and partners we know and trust personally.',
     transport: 'Modern, safe vehicle fleet',
     accommodation: 'Hand-picked guesthouses & hotels',
     guide: 'German/English speaking guides',
@@ -277,7 +293,7 @@ const en = {
   },
   booking: {
     title: 'Your journey starts here',
-    subtitle: 'Fill in the form and we\'ll get back to you within 24 hours.',
+    subtitle: "Fill in the form and we'll get back to you within 24 hours.",
     firstName: 'First name',
     lastName: 'Last name',
     email: 'Email address',
@@ -293,7 +309,7 @@ const en = {
     submit: 'Send inquiry',
     submitting: 'Sending...',
     successTitle: 'Thank you!',
-    successText: 'Your inquiry has been sent successfully. We\'ll get back to you within 24 hours.',
+    successText: "Your inquiry has been sent successfully. We'll get back to you within 24 hours.",
     errorText: 'An error occurred. Please try again.',
     required: 'Required',
     selectPackage: '-- Select package --',
@@ -305,9 +321,11 @@ const en = {
   about: {
     title: 'About Us',
     subtitle: 'We are GeorgianSoul — founded out of love for our country.',
-    story: 'What started as a personal passion has become a small, quality travel company. We bring European travelers to the places we love ourselves — real villages, real families, real nature.',
+    story:
+      'What started as a personal passion has become a small, quality travel company. We bring European travelers to the places we love ourselves — real villages, real families, real nature.',
     mission: 'Our mission',
-    missionText: 'To offer every guest an unforgettable, authentic experience — far from mass tourism, close to the soul of Georgia.',
+    missionText:
+      'To offer every guest an unforgettable, authentic experience — far from mass tourism, close to the soul of Georgia.',
     values: 'Our values',
     value1: 'Authenticity',
     value2: 'Sustainability',
@@ -387,9 +405,9 @@ const ka = {
     whyGeorgia: 'რატომ საქართველო',
   },
   hero: {
-    headline1: 'გაქცევა ქალაქის',
+    headline1: 'გაიქეცი ქალაქის',
     headline2: 'ქაოსიდან.',
-    subheadline: 'საქართველოს ბუნებაში, მთებში და სტუმართმოყვარე ადამიანებში სულის განახლება.',
+    subheadline: 'საქართველოს ბუნებაში, მთებში და სტუმართმოყვარე ადამიანებში.',
     cta: 'ტურების ნახვა',
     ctaSecondary: 'გაიგე მეტი',
     scroll: 'გადადი',
@@ -431,9 +449,11 @@ const ka = {
     title: 'რატომ საქართველო?',
     subtitle: 'ქვეყანა, რომელიც შეგცვლის.',
     reason1Title: 'ხელუხლებელი ბუნება',
-    reason1Desc: 'ტყეები, მყინვარები, კანიონები და მთები — საქართველო ინარჩუნებს ბუნებას, რომელიც ევროპაში თითქმის დავიწყებულია.',
+    reason1Desc:
+      'ტყეები, მყინვარები, კანიონები და მთები — საქართველო ინარჩუნებს ბუნებას, რომელიც ევროპაში თითქმის დავიწყებულია.',
     reason2Title: 'ნამდვილი სტუმართმოყვარეობა',
-    reason2Desc: 'ქართული სტუმართმოყვარეობა ლეგენდარულია. არა სასტუმროს სერვისი — ნამდვილი ადამიანები, ნამდვილი სითბო.',
+    reason2Desc:
+      'ქართული სტუმართმოყვარეობა ლეგენდარულია. არა სასტუმროს სერვისი — ნამდვილი ადამიანები, ნამდვილი სითბო.',
     reason3Title: 'უსაფრთხო მოგზაურობა',
     reason3Desc: 'საქართველო ევროპის ყველაზე უსაფრთხო ქვეყნებს შორისაა.',
     reason4Title: 'კულინარია და ღვინო',
@@ -451,9 +471,10 @@ const ka = {
     stat3: 'მარშრუტი',
     stat4: 'ენა',
     promise: 'ჩვენი დაპირება',
-    promiseText: 'ყოველ ტურს, რომელსაც ვგეგმავთ, თავად გავაკეთებდით. ვარჩევთ სასტუმლოებს, მარშრუტებს და პარტნიორებს, რომლებსაც პირადად ვიცნობთ.',
+    promiseText:
+      'ყოველ ტურს, რომელსაც ვგეგმავთ, თავად გავდივართ. ვარჩევთ სასტუმროებს, მარშრუტებს და პარტნიორებს, რომლებსაც პირადად ვიცნობთ.',
     transport: 'თანამედროვე, უსაფრთხო ავტოპარკი',
-    accommodation: 'ხელარჩეული სასტუმლოები',
+    accommodation: 'საუკეთესო სასტუმროები',
     guide: 'გერმანულ/ინგლისურენოვანი გიდები',
     payment: 'უსაფრთხო გადახდა და გაუქმების პირობები',
   },
@@ -475,7 +496,8 @@ const ka = {
     children: 'ბავშვი (0–17)',
     package: 'პაკეტის არჩევა',
     message: 'თქვენი შეტყობინება (სურვილისამებრ)',
-    messagePlaceholder: 'მოგვიყევით თქვენი სურვილების, განსაკუთრებული საჭიროებების ან კითხვების შესახებ...',
+    messagePlaceholder:
+      'მოგვიყევით თქვენი სურვილების, განსაკუთრებული საჭიროებების ან კითხვების შესახებ...',
     submit: 'გაგზავნა',
     submitting: 'იგზავნება...',
     successTitle: 'გმადლობთ!',
@@ -490,10 +512,12 @@ const ka = {
   },
   about: {
     title: 'ჩვენ შესახებ',
-    subtitle: 'ჩვენ ვართ GeorgianSoul — დაარსებული ჩვენი ქვეყნის სიყვარულით.',
-    story: 'პირადი ვნება რომ ყოფილა, ახლა მცირე, ხარისხიანი სამოგზაურო კომპანიად გადაიქცა.',
+    subtitle:
+      'ჩვენ ვართ GeorgianSoul — საქართველოს შვილები რომლებიც თაობიდან თაობას გადავცემთ ჩვენს მიწა წყალს.',
+    story:
+      'ქვეყანა რომლის ბუნებაც უნიკალურია, მისი სილამაზე უსაზღვროა, ხოლო ტრადიციები ათასწლეულებს ითვლის.',
     mission: 'ჩვენი მიზანი',
-    missionText: 'თითოეულ სტუმარს შეუქმნათ დასამახსოვრებელი, ავთენტური გამოცდილება.',
+    missionText: 'თითოეულ სტუმარს შევუქმნათ დასამახსოვრებელი, ავთენტური გამოცდილება.',
     values: 'ჩვენი ღირებულებები',
     value1: 'ავთენტურობა',
     value2: 'მდგრადობა',
