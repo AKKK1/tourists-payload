@@ -1,18 +1,18 @@
-"use client"
+'use client'
 
 import { useTranslation } from 'react-i18next'
 
 const destinations = [
   { name: 'Svaneti', image: '/dest-svaneti.webp', emoji: '🏔️' },
   { name: 'Kazbegi', image: '/dest-kazbegi.webp', emoji: '⛪' },
-  { name: 'Racha', image: '/dest-tusheti.webp', emoji: '🌿' },
+  { name: 'Racha', image: '/racha1.png', emoji: '🌿' },
   { name: 'Tusheti', image: '/dest-tusheti.webp', emoji: '🐎' },
   { name: 'Kakheti', image: '/dest-kakheti.webp', emoji: '🍷' },
-  { name: 'Tbilisi', image: '/dest-kazbegi.webp', emoji: '🏛️' },
-  { name: 'Batumi', image: '/dest-svaneti.webp', emoji: '🌊' },
-  { name: 'Vardzia', image: '/dest-tusheti.webp', emoji: '🕌' },
-  { name: 'Borjomi', image: '/dest-kakheti.webp', emoji: '💧' },
-  { name: 'Mestia', image: '/dest-svaneti.webp', emoji: '🗼' },
+  { name: 'Tbilisi', image: '/tbilisi.png', emoji: '🏛️' },
+  { name: 'Batumi', image: '/batumi.png', emoji: '🌊' },
+  { name: 'Vardzia', image: '/vardzia.png', emoji: '🕌' },
+  { name: 'Borjomi', image: '/borjomi.png', emoji: '💧' },
+  { name: 'Shida Kartli', image: '/ateni.png', emoji: '🌿' },
 ]
 
 function TickerItem({ name, image, emoji }: { name: string; image: string; emoji: string }) {
