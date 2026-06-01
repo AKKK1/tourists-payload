@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -6,12 +6,24 @@ import { useSearchParams } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { CircleCheck as CheckCircle2, CircleAlert as AlertCircle, Mail, MessageCircle, MapPin } from 'lucide-react'
+import {
+  CircleCheck as CheckCircle2,
+  CircleAlert as AlertCircle,
+  Mail,
+  MessageCircle,
+  MapPin,
+} from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 import { cn } from '@/lib/utils'
 
 interface FormData {
@@ -43,10 +55,26 @@ const schema = z.object({
 })
 
 const countries = [
-  'Deutschland', 'Osterreich', 'Schweiz', 'Vereinigtes Konigreich', 'Frankreich',
-  'Niederlande', 'Belgien', 'Schweden', 'Norwegen', 'Danemark', 'Finnland',
-  'Italien', 'Spanien', 'Polen', 'Tschechien', 'United States', 'Canada',
-  'Australia', 'Georgia', 'Other',
+  'Deutschland',
+  'Osterreich',
+  'Schweiz',
+  'Vereinigtes Konigreich',
+  'Frankreich',
+  'Niederlande',
+  'Belgien',
+  'Schweden',
+  'Norwegen',
+  'Danemark',
+  'Finnland',
+  'Italien',
+  'Spanien',
+  'Polen',
+  'Tschechien',
+  'United States',
+  'Canada',
+  'Australia',
+  'Georgia',
+  'Other',
 ]
 
 export function BookingPage() {
@@ -57,12 +85,22 @@ export function BookingPage() {
 
   const packageParam = searchParams?.get('package') || ''
   const packageNameMap: Record<string, string> = {
-    'basic-escape': lang === 'de' ? 'Basic Escape (7 Tage, ab EUR 890)' : 'Basic Escape (7 days, from EUR 890)',
-    'deep-georgia': lang === 'de' ? 'Tiefes Georgien (12 Tage, ab EUR 1.590)' : 'Deep Georgia (12 days, from EUR 1,590)',
-    'custom-soul-recovery': lang === 'de' ? 'Individuelle Seelen-Erholung' : 'Custom Soul Recovery Trip',
+    'basic-escape':
+      lang === 'de' ? 'Basic Escape (7 Tage, ab EUR 890)' : 'Basic Escape (7 days, from EUR 890)',
+    'deep-georgia':
+      lang === 'de'
+        ? 'Tiefes Georgien (12 Tage, ab EUR 1.590)'
+        : 'Deep Georgia (12 days, from EUR 1,590)',
+    'custom-soul-recovery':
+      lang === 'de' ? 'Individuelle Seelen-Erholung' : 'Custom Soul Recovery Trip',
   }
 
-  const { register, handleSubmit, setValue, formState: { errors } } = useForm<FormData>({
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors },
+  } = useForm<FormData>({
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     resolver: zodResolver(schema) as any,
     defaultValues: {
@@ -201,11 +239,7 @@ export function BookingPage() {
                     <Label htmlFor="phone" className="text-sm font-medium">
                       {t('booking.phone')}
                     </Label>
-                    <Input
-                      id="phone"
-                      {...register('phone')}
-                    placeholder="+49 177 ..."
-                    />
+                    <Input id="phone" {...register('phone')} placeholder="+49 177 ..." />
                   </div>
                 </div>
 
@@ -218,7 +252,9 @@ export function BookingPage() {
                     </SelectTrigger>
                     <SelectContent>
                       {countries.map((c) => (
-                        <SelectItem key={c} value={c}>{c}</SelectItem>
+                        <SelectItem key={c} value={c}>
+                          {c}
+                        </SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
@@ -265,7 +301,9 @@ export function BookingPage() {
                       </SelectTrigger>
                       <SelectContent>
                         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
-                          <SelectItem key={n} value={String(n)}>{n}</SelectItem>
+                          <SelectItem key={n} value={String(n)}>
+                            {n}
+                          </SelectItem>
                         ))}
                       </SelectContent>
                     </Select>
@@ -283,7 +321,9 @@ export function BookingPage() {
                       </SelectTrigger>
                       <SelectContent>
                         {[0, 1, 2, 3, 4, 5].map((n) => (
-                          <SelectItem key={n} value={String(n)}>{n}</SelectItem>
+                          <SelectItem key={n} value={String(n)}>
+                            {n}
+                          </SelectItem>
                         ))}
                       </SelectContent>
                     </Select>
@@ -301,10 +341,18 @@ export function BookingPage() {
                       <SelectValue placeholder={t('booking.selectPackage')} />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value={t('booking.noPreference')}>{t('booking.noPreference')}</SelectItem>
-                      <SelectItem value={t('booking.packageBasic')}>{t('booking.packageBasic')}</SelectItem>
-                      <SelectItem value={t('booking.packageDeep')}>{t('booking.packageDeep')}</SelectItem>
-                      <SelectItem value={t('booking.packageCustom')}>{t('booking.packageCustom')}</SelectItem>
+                      <SelectItem value={t('booking.noPreference')}>
+                        {t('booking.noPreference')}
+                      </SelectItem>
+                      <SelectItem value={t('booking.packageBasic')}>
+                        {t('booking.packageBasic')}
+                      </SelectItem>
+                      <SelectItem value={t('booking.packageDeep')}>
+                        {t('booking.packageDeep')}
+                      </SelectItem>
+                      <SelectItem value={t('booking.packageCustom')}>
+                        {t('booking.packageCustom')}
+                      </SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -348,11 +396,18 @@ export function BookingPage() {
                   {lang === 'de' ? 'Direkter Kontakt' : 'Direct contact'}
                 </h3>
                 <div className="space-y-3">
-                  <a href="mailto:info@georgiansoul.online" className="flex items-center gap-2.5 text-sm text-foreground hover:text-[oklch(0.32_0.08_155)] transition-colors">
+                  <a
+                    href="mailto:                 GeorgianSoul@outlook.com
+"
+                    className="flex items-center gap-2.5 text-sm text-foreground hover:text-[oklch(0.32_0.08_155)] transition-colors"
+                  >
                     <Mail className="w-4 h-4 shrink-0 text-muted-foreground" />
-                    info@georgiansoul.online
+                    GeorgianSoul@outlook.com
                   </a>
-                  <a href="https://wa.me/491772209295" className="flex items-center gap-2.5 text-sm text-foreground hover:text-[oklch(0.32_0.08_155)] transition-colors">
+                  <a
+                    href="https://wa.me/491772209295"
+                    className="flex items-center gap-2.5 text-sm text-foreground hover:text-[oklch(0.32_0.08_155)] transition-colors"
+                  >
                     <MessageCircle className="w-4 h-4 shrink-0 text-muted-foreground" />
                     +49 177 2209295
                   </a>
@@ -369,21 +424,24 @@ export function BookingPage() {
                   {lang === 'de' ? 'Warum uns buchen?' : 'Why book with us?'}
                 </h3>
                 <ul className="space-y-2.5">
-                  {(lang === 'de' ? [
-                    'Antwort innerhalb 24 Stunden',
-                    'Kostenlose Stornierung (30 Tage vorher)',
-                    'Deutsch sprechende Guides',
-                    'Kleine Gruppen (max. 12 Personen)',
-                    'Handverlesene Unterkunfte',
-                    'Uber 200 zufriedene Gaste',
-                  ] : [
-                    'Reply within 24 hours',
-                    'Free cancellation (30 days before)',
-                    'German speaking guides',
-                    'Small groups (max. 12 people)',
-                    'Hand-picked accommodation',
-                    '200+ happy guests',
-                  ]).map((item) => (
+                  {(lang === 'de'
+                    ? [
+                        'Antwort innerhalb 24 Stunden',
+                        'Kostenlose Stornierung (30 Tage vorher)',
+                        'Deutsch sprechende Guides',
+                        'Kleine Gruppen (max. 12 Personen)',
+                        'Handverlesene Unterkunfte',
+                        'Uber 200 zufriedene Gaste',
+                      ]
+                    : [
+                        'Reply within 24 hours',
+                        'Free cancellation (30 days before)',
+                        'German speaking guides',
+                        'Small groups (max. 12 people)',
+                        'Hand-picked accommodation',
+                        '200+ happy guests',
+                      ]
+                  ).map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm text-foreground">
                       <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-[oklch(0.45_0.08_150)]" />
                       <span>{item}</span>
@@ -398,9 +456,13 @@ export function BookingPage() {
                   {lang === 'de' ? 'Stornobedingungen' : 'Cancellation policy'}
                 </h4>
                 <ul className="text-xs text-muted-foreground space-y-1">
-                  <li>{lang === 'de' ? 'Bis 30 Tage vorher: kostenlos' : 'Until 30 days before: free'}</li>
+                  <li>
+                    {lang === 'de' ? 'Bis 30 Tage vorher: kostenlos' : 'Until 30 days before: free'}
+                  </li>
                   <li>{lang === 'de' ? '15-29 Tage: 50% Erstattung' : '15-29 days: 50% refund'}</li>
-                  <li>{lang === 'de' ? 'Unter 14 Tage: keine Erstattung' : 'Under 14 days: no refund'}</li>
+                  <li>
+                    {lang === 'de' ? 'Unter 14 Tage: keine Erstattung' : 'Under 14 days: no refund'}
+                  </li>
                 </ul>
               </div>
             </div>
