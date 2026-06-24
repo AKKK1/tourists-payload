@@ -128,12 +128,12 @@ export function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                name: 'Akaki Ch',
+                name: 'A. C',
                 role: lang === 'de' ? 'Gründer & Chefführer' : 'Founder & Lead Guide',
                 langs: 'DE / EN / KA',
               },
               {
-                name: 'Akaki Cha',
+                name: 'N. C',
                 role:
                   lang === 'de'
                     ? 'Reiseplanung & Kundenbetreuung'
@@ -141,7 +141,7 @@ export function AboutPage() {
                 langs: 'DE / EN',
               },
               {
-                name: 'Akaki Chach',
+                name: 'O. L',
                 role: lang === 'de' ? 'Fahrer & lokaler Experte' : 'Driver & Local Expert',
                 langs: 'EN / KA',
               },
